@@ -1,0 +1,17 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: "app-spec-demo-mr-teste"
+  description: "Artifacts generator via Spec."
+  annotations:
+    github.com/project-slug: ValberJunior/app-spec-demo-mr-teste
+    backstage.io/techdocs-ref: dir:.
+    github.com/workflows: publish.yml
+    kong-manager/service-name: veecode-apr.app-exemple-platform-obs-service-0.8080
+    kong-manager/instance: kongxpto
+spec:
+  type: devops
+  lifecycle: experimental
+  owner: "group:default/admin"
+  providesApis:
+    - app-spec-demo-mr-teste

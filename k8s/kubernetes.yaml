@@ -1,0 +1,46 @@
+
+apiVersion: configuration.konghq.com/v1
+kind: KongPlugin
+metadata:
+  name: app-spec-demo-mr-cors
+plugin: cors
+config:
+  origins:
+    - https://devportal-homolog.apr.vee.codes
+    - https://devportal.apr.vee.codes
+  credentials: false
+  max_age: 3600
+  preflight_continue: false
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: app-spec-demo-mr
+spec:
+  externalName: viacep.com.br
+  type: ExternalName
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    konghq.com/methods: GET
+    konghq.com/regex-priority: "100"
+    konghq.com/strip-path: "false"
+    konghq.com/plugins: app-spec-demo-mr-cors
+  name: app-spec-demo-mr-viacep-viacep-getaddressbyzip-code
+spec:
+  ingressClassName: kong
+  rules:
+    - http:
+        paths:
+          - backend:
+              service:
+                name: app-spec-demo-mr
+                port:
+                  number: 80
+            path: /~/app-spec-demo-mr/ws/(?<zip_code>[^#?/]+)/json$
+            pathType: ImplementationSpecific
+      host: spec.platform.vee.codes
+---
+
