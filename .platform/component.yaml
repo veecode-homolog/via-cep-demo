@@ -9,7 +9,9 @@ metadata:
     github.com/workflows: publish.yml
     kong-manager/service-name: veecode-apr.app-exemple-platform-obs-service-0.8080
     kong-manager/instance: kongxpto
-    kong-manager/spec: openapi-swagger.yaml
+    kong-manager/spec:
+     - name: ViaCEP
+       path: openapi-swagger.yaml
 spec:
   type: devops
   lifecycle: experimental
