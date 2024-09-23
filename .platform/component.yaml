@@ -9,6 +9,7 @@ metadata:
     github.com/workflows: publish.yml
     kong-manager/service-name: veecode-apr.app-exemple-platform-obs-service-0.8080
     kong-manager/instance: kongxpto
+    kong-manager/specs: openapi-swagger.yaml
 spec:
   type: devops
   lifecycle: experimental
