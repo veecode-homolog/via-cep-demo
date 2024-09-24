@@ -28,25 +28,37 @@
       url: http://swagger.io
     
   
-  x-kong-rate-limiting: 
-    name: x-kong-rate-limiting
+  x-kong-key-auth: 
+    name: key-auth
     enabled: true
     config: 
-      config: 
-        redis_database: 0
-        redis_ssl_verify: false
-        limit_by: consumer
-        redis_port: 6379
-        policy: local
-        second: 8000
-        fault_tolerant: true
-        hide_client_headers: false
-        error_message: API rate limit exceeded
-        error_code: 429
-        redis_timeout: 2000
-        redis_ssl: false
-        sync_rate: -1
+      run_on_preflight: true
+      hide_credentials: false
+      key_in_body: false
+      key_in_query: true
+      key_in_header: true
+      key_names: 
+        apikey
       
+    
+  
+  x-kong-rate-limiting: 
+    name: rate-limiting
+    enabled: true
+    config: 
+      redis_database: 0
+      redis_ssl_verify: false
+      limit_by: consumer
+      redis_port: 6379
+      policy: local
+      second: 8000
+      fault_tolerant: true
+      hide_client_headers: false
+      error_message: API rate limit exceeded
+      error_code: 429
+      redis_timeout: 2000
+      redis_ssl: false
+      sync_rate: -1
     
   
   paths: 
