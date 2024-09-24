@@ -29,12 +29,12 @@
     
   
   x-kong-key-auth: 
-    name: key-auth
+    name: x-kong-key-auth
     enabled: true
     config: 
   
   x-kong-rate-limiting: 
-    name: rate-limiting
+    name: x-kong-rate-limiting
     enabled: true
     config: 
   
