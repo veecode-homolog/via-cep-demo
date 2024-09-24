@@ -28,6 +28,11 @@
       url: http://swagger.io
     
   
+  x-kong-key-auth: 
+    name: Key Auth
+    enabled: true
+    config: 
+  
   x-kong-rate-limiting: 
     name: Rate Limiting
     enabled: true
