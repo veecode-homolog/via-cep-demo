@@ -33,7 +33,9 @@
     enabled: true
     config: 
       name: key-auth
+      id: 84e7b2d9-cc7b-46ca-8e0e-bf646ef80e34
       enabled: true
+      createdAt: 1727111676
       config: 
         run_on_preflight: true
         hide_credentials: false
@@ -51,7 +53,9 @@
     enabled: true
     config: 
       name: rate-limiting
+      id: 101c98be-24d9-4ff4-83b6-c845296094ae
       enabled: true
+      createdAt: 1727111667
       config: 
         redis_database: 0
         redis_ssl_verify: false
