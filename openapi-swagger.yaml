@@ -18,43 +18,75 @@
     url: http://swagger.io
   
   servers: 
-    
-      url: https://viacep.com.br/
-    
+    url: https://viacep.com.br/
   
   tags: 
-    
-      name: Address
-      description: Getting zip-code informations
-      externalDocs: 
-        description: Find out more
-        url: http://swagger.io
-      
+    name: Address
+    description: Getting zip-code informations
+    externalDocs: 
+      description: Find out more
+      url: http://swagger.io
     
   
   x-kong-key-auth: 
     name: x-kong-key-auth
     enabled: true
     config: 
+      name: key-auth
+      id: 84e7b2d9-cc7b-46ca-8e0e-bf646ef80e34
+      enabled: true
+      createdAt: 1727111676
+      config: 
+        run_on_preflight: true
+        hide_credentials: false
+        key_in_body: false
+        key_in_query: true
+        key_in_header: true
+        key_names: 
+          apikey
+        
+      
+    
+  
+  x-kong-rate-limiting: 
+    name: x-kong-rate-limiting
+    enabled: true
+    config: 
+      name: rate-limiting
+      id: 101c98be-24d9-4ff4-83b6-c845296094ae
+      enabled: true
+      createdAt: 1727111667
+      config: 
+        redis_database: 0
+        redis_ssl_verify: false
+        limit_by: consumer
+        redis_port: 6379
+        policy: local
+        second: 8000
+        fault_tolerant: true
+        hide_client_headers: false
+        error_message: API rate limit exceeded
+        error_code: 429
+        redis_timeout: 2000
+        redis_ssl: false
+        sync_rate: -1
+      
+    
   
   paths: 
     /ws/zip-code/json: 
       get: 
-        tags: 
-          Address
-        
+        tags: Address
         summary: Find Address by zip-code
         description: Returns a single Address
         operationId: getAddressByzip-code
         parameters: 
-          
-            name: zip-code
-            in: path
-            description: zip-code to search
-            required: true
-            schema: 
-              type: string
-            
+          name: zip-code
+          in: path
+          description: zip-code to search
+          required: true
+          schema: 
+            type: string
           
         
         responses: 
@@ -63,18 +95,18 @@
             content: 
               application/json: 
                 schema: 
-                  $ref: #/components/schemas/Address
+                  $ref: null
                 
               
             
           
           400: 
             description: Invalid zip-code supplied
-            content: 
+            content: null
           
           404: 
             description: Address not found
-            content: 
+            content: null
           
         
       
