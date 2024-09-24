@@ -28,11 +28,6 @@
       url: http://swagger.io
     
   
-  x-kong-rate-limiting: 
-    name: Rate Limiting
-    enabled: true
-    config: 
-  
   paths: 
     /ws/zip-code/json: 
       get: 
