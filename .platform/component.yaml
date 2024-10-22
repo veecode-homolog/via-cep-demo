@@ -9,7 +9,7 @@ metadata:
     github.com/workflows: publish.yml
     #kong-manager/service-name: veecode-apr.app-exemple-platform-obs-service-0.8080
     # kong-manager/instance: kongxpto
-    kong-manager/service-name: petclinic.testesteste-cluster-overview.vkpr.platform.vee.codes
+    kong-manager/service-name: vkpr.spring-petclinic.80
     kong-manager/instance: kongcomunity
     kong-manager/spec: openapi-swagger.yaml
 spec:
