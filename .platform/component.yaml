@@ -8,7 +8,7 @@ metadata:
     backstage.io/techdocs-ref: dir:.
     github.com/workflows: publish.yml
     kong-manager/service-name: veecode-apr.app-exemple-platform-obs-service-0.8080
-    kong-manager/instance: kongxpto
+    kong-manager/instance: api
     kong-manager/spec: openapi-swagger.yaml
 spec:
   type: devops
