@@ -20,6 +20,17 @@ tags:
   externalDocs:
     description: Find out more
     url: http://swagger.io
+x-kong-key-auth:
+  name: key-auth
+  enabled: true
+  config:
+    run_on_preflight: true
+    hide_credentials: false
+    key_in_body: false
+    key_in_query: true
+    key_in_header: true
+    key_names:
+      - apikey
 paths:
   /ws/zip-code/json:
     get:
