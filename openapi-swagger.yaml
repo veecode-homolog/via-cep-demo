@@ -13,40 +13,61 @@ externalDocs:
   description: Find out more about Swagger
   url: http://swagger.io
 servers:
-  url: https://viacep.com.br/
+  - url: https://viacep.com.br/
 tags:
-  name: Address
-  description: Getting zip-code informations
-  externalDocs:
-    description: Find out more
-    url: http://swagger.io
+  - name: Address
+    description: Getting zip-code informations
+    externalDocs:
+      description: Find out more
+      url: http://swagger.io
+  - name: Health
+    description: Service health check
 paths:
-  /ws/zip-code/json:
+  /ws/{zip-code}/json:
     get:
-      tags: Address
+      tags:
+        - Address
       summary: Find Address by zip-code
       description: Returns a single Address
-      operationId: getAddressByzip-code
+      operationId: getAddressByZipCode
       parameters:
-        name: zip-code
-        in: path
-        description: zip-code to search
-        required: true
-        schema:
-          type: string
+        - name: zip-code
+          in: path
+          description: zip-code to search
+          required: true
+          schema:
+            type: string
       responses:
         '200':
           description: successful operation
           content:
             application/json:
               schema:
-                $ref: null
+                $ref: '#/components/schemas/Address'
         '400':
           description: Invalid zip-code supplied
-          content: null
         '404':
           description: Address not found
-          content: null
+  /health-check:
+    get:
+      tags:
+        - Health
+      summary: Check service health
+      description: Returns the health status of the service
+      operationId: getHealthCheck
+      responses:
+        '200':
+          description: Service is healthy
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "healthy"
+        '500':
+          description: Service is unavailable
 components:
   schemas:
     Address:
