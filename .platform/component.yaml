@@ -7,8 +7,8 @@ metadata:
     github.com/project-slug: ValberJunior/app-spec-demo-mr-teste
     backstage.io/techdocs-ref: dir:.
     github.com/workflows: publish.yml
-    kong-manager/service-name: veecode-apr.app-exemple-platform-obs-service-0.8080
-    kong-manager/instance: api
+    kong-manager/service-name: app.spec-cluster-k8s-playrole.80
+    kong-manager/instance: kongcomunity
     kong-manager/spec: openapi-swagger.yaml
 spec:
   type: devops
