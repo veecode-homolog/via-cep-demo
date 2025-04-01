@@ -8,7 +8,7 @@ metadata:
     backstage.io/techdocs-ref: dir:.
     github.com/workflows: publish.yml
     kong-manager/service-name: app.spec-cluster-k8s-playrole.80
-    kong-manager/instance: kongcomunity
+    kong-manager/instance: apr
     kong-manager/spec: openapi-swagger.yaml
 spec:
   type: devops
