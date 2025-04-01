@@ -1,18 +1,16 @@
 apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
-  name: app-spec-demo-mr-teste
-  title: app-spec-demo-mr-teste
-  publishedAt: "2024-06-13 19:34:01"
+  name: via-cep-app
   description: Consulte CEPs de todo o Brasil.
+  publishedAt: 2022-11-25
   tags:
-    - app
-    - spec
-    - demo
-    - sample
+    - rest
+    - api
+    - change
 spec:
   type: openapi
-  lifecycle: production
+  lifecycle: produção
   owner: consumer
   definition: |-
     openapi: 3.0.1
@@ -37,24 +35,6 @@ spec:
           externalDocs:
             description: Find out more
             url: http://swagger.io
-            
-    x-kong-plugin-request-transformer:
-        name: strip-prefix-plugin
-        enabled: true
-        config:
-            replace:
-                uri: /pipeline/training/v1/lmodesto-veecode
-            add:
-                headers:
-                    - apikey:RIcnWiadCqxCM3iy03jCpMGrRAvho5gt
-    x-kong-plugin-cors:
-        name: pet-cors
-        enabled: true
-        config:
-            origins:
-                - 'https://devportal-homolog.apr.vee.codes'
-                - 'https://devportal.apr.vee.codes'
-                
     paths:
         '/ws/{zip-code}/json':
             get:

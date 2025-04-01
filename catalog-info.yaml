@@ -1,8 +1,8 @@
 apiVersion: backstage.io/v1alpha1
 kind: Location
 metadata:
-  name: app-spec-demo-mr-teste-location
-  description: Location to import all app-spec-demo-mr catalog components
+  name: via-cep-app-location
+  description: Location to import all via-cep-app-location catalog components
 spec:
   targets:
     - ./.platform/*.yaml
