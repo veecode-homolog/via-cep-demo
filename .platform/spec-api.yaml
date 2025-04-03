@@ -10,7 +10,7 @@ metadata:
     - change
 spec:
   type: openapi
-  lifecycle: produção
+  lifecycle: production
   owner: consumer
   definition: |-
     openapi: 3.0.1
