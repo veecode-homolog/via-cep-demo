@@ -15,4 +15,4 @@ spec:
   lifecycle: experimental
   owner: "group:default/admin"
   providesApis:
-    - via-cep-app
+    - via-cep-demo
