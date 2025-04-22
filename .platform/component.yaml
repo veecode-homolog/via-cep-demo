@@ -4,7 +4,7 @@ metadata:
   name: "via-cep-demo"
   description: "Artifacts generator via Spec."
   annotations:
-    github.com/project-slug: ValberJunior/via-cep-app
+    github.com/project-slug: veecode-homolog/via-cep-demo
     backstage.io/techdocs-ref: dir:.
     github.com/workflows: publish.yml
     kong-manager/service-name: veecode-apr.app-exemple-platform-obs-service-0.8080
